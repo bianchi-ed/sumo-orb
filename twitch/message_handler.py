@@ -30,7 +30,6 @@ class ChatCommands:
     def handle(self, message, client):
         text = message.get("text", "")
         if text.startswith(PREFIX):
-            print(f"[{PREFIX}] <{message['display_name']}> {message['text']}")
             self.run(message, client)
         else:
             self.show(message, client)
@@ -62,6 +61,7 @@ class ChatCommands:
                 self.is_mod = message.get("is_mod", False)
                 self.is_sub = message.get("is_sub", False)
                 self.is_broadcaster = message["username"].lower() == message["channel"].lower()
+                self.bot_username = getattr(client, "bot_username", "bot")
 
             def reply(self, text):
                 client.send_message(self.channel, text)

@@ -11,7 +11,7 @@ TWITCH_USER_ACCESS_TOKEN = os.getenv("TWITCH_USER_ACCESS_TOKEN")
 @commands.add(name="whois", cooldown=5)
 def whois(ctx):
     if not ctx.args:
-        ctx.reply(f"Usage: {PREFIX}whois <username>")
+        ctx.reply(f"@{ctx.display_name} Usage: {PREFIX}whois <username>")
         return
     user = ctx.args[0]
     url = f"https://api.twitch.tv/helix/users?login={user}"
@@ -32,7 +32,7 @@ def whois(ctx):
                 except Exception:
                     pass
             msg = (
-                f"[ Username: {u['login']} ] "
+                f"@{ctx.display_name} [ Username: {u['login']} ] "
                 f"[ ID: {u['id']} ] "
                 f"[ Broadcaster: {u.get('broadcaster_type', 'N/A')} ] "
                 f"[ Created: {created_at_us} ] "
@@ -40,6 +40,6 @@ def whois(ctx):
             )
             ctx.reply(msg)
         else:
-            ctx.reply(f"User '{user}' not found.")
-    except Exception:
-        ctx.reply("Error fetching user info.")
+            ctx.reply(f"@{ctx.display_name} User '{user}' not found.")
+    except Exception as e:
+        ctx.reply(f"@{ctx.display_name} Error fetching user info.")

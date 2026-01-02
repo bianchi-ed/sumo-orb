@@ -4,7 +4,6 @@ import os
 import re
 import socket
 
-
 class TwitchClient:
     
     def __init__(self, on_message_callback):
