@@ -37,4 +37,4 @@ Shows the head-to-head record between two rikishis.
 Lists all available commands.
 > Usage example: `&help`
 >
-> Bot reply: `@user -> Commands: !whois, !rikishi, !highestrank, !record, !versus, !help`
+> Bot reply: `@user -> Commands: !whois, !rikishi, !highestrank, !versus, !help`
