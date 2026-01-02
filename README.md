@@ -10,7 +10,7 @@ sumo-orb is a simple twitch.tv chat bot for sumo stats.
 Shows info about a rikishi.
 > Usage example: `&rikishi onosato`
 >
-> Bot reply: @user -> Name: Onosato | Rank: Yokozuna 1 East | Heya: Onomatsu | Birth: 2000-12-01 | Shusshin: Ishikawa | Height: 190cm | Weight: 170kg | Debut: 202003
+> Bot reply: `@user -> Name: Onosato | Rank: Yokozuna 1 East | Heya: Onomatsu | Birth: 2000-12-01 | Shusshin: Ishikawa | Height: 190cm | Weight: 170kg | Debut: 202003`
 
 ---
 
@@ -21,7 +21,7 @@ Shows info about a rikishi.
 Shows the highest rank ever achieved by a rikishi.
 > Usage example: `&highestrank onosato`
 >
-> Bot reply: @user -> Yokozuna 1 East
+> Bot reply: `@user -> Yokozuna 1 East`
 
 ---
 
@@ -32,7 +32,7 @@ Shows the highest rank ever achieved by a rikishi.
 Shows the total win-loss record, number of matches, and bashos for a rikishi.
 > Usage example: `&record onosato`
 >
-> Bot reply: @user -> Onosato: 50W-20L | Matches: 70 | Bashos: 12
+> Bot reply: `@user -> Onosato: 50W-20L | Matches: 70 | Bashos: 12`
 
 ---
 
@@ -43,7 +43,7 @@ Shows the total win-loss record, number of matches, and bashos for a rikishi.
 Shows the head-to-head record between two rikishis.
 > Usage example: `&versus onosato hoshoryu`
 >
-> Bot reply: @user -> Onosato 3 - 3 Hoshoryu
+> Bot reply: `@user -> Onosato 3 - 3 Hoshoryu`
 
 ---
 
@@ -54,4 +54,4 @@ Shows the head-to-head record between two rikishis.
 Lists all available commands.
 > Usage example: `&help`
 >
-> Bot reply: @user -> Commands: !whois, !rikishi, !highestrank, !record, !versus, !help
+> Bot reply: `@user -> Commands: !whois, !rikishi, !highestrank, !record, !versus, !help`
