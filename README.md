@@ -14,8 +14,6 @@ Shows info about a rikishi.
 
 ---
 
-
-
 ### &highestrank
 
 Shows the highest rank ever achieved by a rikishi.
@@ -25,19 +23,6 @@ Shows the highest rank ever achieved by a rikishi.
 
 ---
 
-
-
-### &record
-
-Shows the total win-loss record, number of matches, and bashos for a rikishi.
-> Usage example: `&record onosato`
->
-> Bot reply: `@user -> Onosato: 50W-20L | Matches: 70 | Bashos: 12`
-
----
-
-
-
 ### &versus
 
 Shows the head-to-head record between two rikishis.
@@ -46,8 +31,6 @@ Shows the head-to-head record between two rikishis.
 > Bot reply: `@user -> Onosato 3 - 3 Hoshoryu`
 
 ---
-
-
 
 ### &commands
 
