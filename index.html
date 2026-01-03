@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sumo-orb</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0f0f0f;
+      color: #eaeaea;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #ffcc00;
+    }
+    h1 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 30px 0;
+    }
+    .command {
+      margin-bottom: 30px;
+    }
+    .command-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #00d4ff;
+    }
+    .label {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+    .usage {
+      color: #00d4ff;
+    }
+    .reply {
+      color: #9aff9a;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>sumo-orb</h1>
+<p><strong>sumo-orb</strong> is a simple twitch.tv chat bot for sumo stats.</p>
+
+<h2>Commands & Examples</h2>
+
+<div class="command">
+  <div class="command-name">&commands</div>
+  <div><span class="label">Description:</span> Lists all available commands.</div>
+  <div><span class="label">Example:</span> <span class="usage">&commands</span></div>
+  <div><span class="label">Reply:</span> <span class="reply">@user → &highestrank, &record, &recordbydivision, &rikishi, &shanshos, &versus</span></div>
+</div>
+<hr>
+
+<div class="command">
+  <div class="command-name">&highestrank</div>
+  <div><span class="label">Description:</span> Shows the highest rank ever achieved by a rikishi.</div>
+  <div><span class="label">Example:</span> <span class="usage">&highestrank onosato</span></div>
+  <div><span class="label">Reply:</span> <span class="reply">@user → Yokozuna 1 East</span></div>
+</div>
+<hr>
+
+<div class="command">
+  <div class="command-name">&record</div>
+  <div><span class="label">Description:</span> Shows the overall record for a rikishi.</div>
+  <div><span class="label">Example:</span> <span class="usage">&record onosato</span></div>
+  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Wins: 170 | Losses: 54 | Matches: 224 | Basho: 17 | Yusho: 5</span></div>
+</div>
+<hr>
+
+<div class="command">
+  <div class="command-name">&recordbydivision</div>
+  <div><span class="label">Description:</span> Shows a rikishi's record by division.</div>
+  <div><span class="label">Example:</span> <span class="usage">&recordbydivision onosato</span></div>
+  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Makuuchi: 136-44 | Makushita: 10-4 | Juryo: 24-6</span></div>
+</div>
+<hr>
+
+<div class="command">
+  <div class="command-name">&rikishi</div>
+  <div><span class="label">Description:</span> Shows info about a rikishi.</div>
+  <div><span class="label">Example:</span> <span class="usage">&rikishi onosato</span></div>
+  <div><span class="label">Reply:</span> <span class="reply">@user → Name: Onosato | Rank: Yokozuna 1 West | Heya: Nishonoseki | Birth: 2000-06-07 | Shusshin: Ishikawa-ken, Kahoku-gun, Tsubata-machi | Height: 192cm | Weight: 183kg | Debut: 202305</span></div>
+</div>
+<hr>
+
+<div class="command">
+  <div class="command-name">&shanshos</div>
+  <div><span class="label">Description:</span> Shows the number of special prizes (sansho) a rikishi has won.</div>
+  <div><span class="label">Example:</span> <span class="usage">&shanshos onosato</span></div>
+  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Gino-sho: 3 | Kanto-sho: 3 | Shukun-sho: 2</span></div>
+</div>
+<hr>
+
+<div class="command">
+  <div class="command-name">&versus</div>
+  <div><span class="label">Description:</span> Shows the head-to-head record between two rikishis.</div>
+  <div><span class="label">Example:</span> <span class="usage">&versus onosato hoshoryu</span></div>
+  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato 3 - 8 Hoshoryu</span></div>
+</div>
+
+<footer>
+  © sumo-orb — Twitch Sumo Stats Bot
+</footer>
+
+</body>
+</html>

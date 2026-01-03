@@ -6,63 +6,45 @@ sumo-orb is a simple twitch.tv chat bot for sumo stats.
 
 
 
-### &commands
-
-Lists all available commands.
-> Usage example: `&commands`
->
-> Bot reply: `@user -> Commands: &highestrank, &record, &recordbydivision, &rikishi, &shanshos, &versus`
 
 ---
-
-### &highestrank
-
-Shows the highest rank ever achieved by a rikishi.
-> Usage example: `&highestrank onosato`
->
-> Bot reply: `@user -> Yokozuna 1 East`
+Command: &commands  
+Description: Lists all available commands.  
+Example: &commands  
+Reply: @user → &highestrank, &record, &recordbydivision, &rikishi, &shanshos, &versus
 
 ---
-
-### &record
-
-Shows the overall record for a rikishi.
-> Usage example: `&record onosato`
->
-> Bot reply: `@user -> Onosato | Wins: 170 | Losses: 54 | Matches: 224 | Basho: 17 | Yusho: 5`
+Command: &highestrank  
+Description: Shows the highest rank ever achieved by a rikishi.  
+Example: &highestrank onosato  
+Reply: @user → Yokozuna 1 East
 
 ---
-
-### &recordbydivision
-
-Shows a rikishi's record by division.
-> Usage example: `&recordbydivision onosato`
->
-> Bot reply: `@user -> Onosato | Makuuchi: 136-44 | Makushita: 10-4 | Juryo: 24-6`
+Command: &record  
+Description: Shows the overall record for a rikishi.  
+Example: &record onosato  
+Reply: @user → Onosato | Wins: 170 | Losses: 54 | Matches: 224 | Basho: 17 | Yusho: 5
 
 ---
-
-### &rikishi
-
-Shows info about a rikishi.
-> Usage example: `&rikishi onosato`
->
-> Bot reply: `@user -> Name: Onosato | Rank: Yokozuna 1 West | Heya: Nishonoseki | Birth: 2000-06-07 | Shusshin: Ishikawa-ken, Kahoku-gun, Tsubata-machi | Height: 192cm | Weight: 183kg | Debut: 202305`
+Command: &recordbydivision  
+Description: Shows a rikishi's record by division.  
+Example: &recordbydivision onosato  
+Reply: @user → Onosato | Makuuchi: 136-44 | Makushita: 10-4 | Juryo: 24-6
 
 ---
-
-### &shansho
-
-Shows the number of special prizes (sansho) a rikishi has won.
-> Usage example: `&shansho onosato`
->
-> Bot reply: `@user -> Onosato | Gino-sho: 3 | Kanto-sho: 3 | Shukun-sho: 2`
+Command: &rikishi  
+Description: Shows info about a rikishi.  
+Example: &rikishi onosato  
+Reply: @user → Name: Onosato | Rank: Yokozuna 1 West | Heya: Nishonoseki | Birth: 2000-06-07 | Shusshin: Ishikawa-ken, Kahoku-gun, Tsubata-machi | Height: 192cm | Weight: 183kg | Debut: 202305
 
 ---
+Command: &shanshos  
+Description: Shows the number of special prizes (sansho) a rikishi has won.  
+Example: &shanshos onosato  
+Reply: @user → Onosato | Gino-sho: 3 | Kanto-sho: 3 | Shukun-sho: 2
 
-### &versus
-
-Shows the head-to-head record between two rikishis.
-> Usage example: `&versus onosato hoshoryu`
->
-> Bot reply: `@user -> Onosato 3 - 8 Hoshoryu`
+---
+Command: &versus  
+Description: Shows the head-to-head record between two rikishis.  
+Example: &versus onosato hoshoryu  
+Reply: @user → Onosato 3 - 8 Hoshoryu
