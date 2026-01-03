@@ -44,7 +44,13 @@ Example: &shanshos onosato
 Reply: @user → Onosato | Gino-sho: 3 | Kanto-sho: 3 | Shukun-sho: 2
 
 ---
-Command: &versus  
-Description: Shows the head-to-head record between two rikishis.  
-Example: &versus onosato hoshoryu  
-Reply: @user → Onosato 3 - 8 Hoshoryu
+
+# sumo-orb
+
+sumo-orb is a lightweight Twitch chat bot designed for sumo wrestling fans. It provides quick access to rikishi stats, records, and head-to-head results directly in chat. The bot is easy to set up and aims to keep things simple and direct, with no unnecessary complexity.
+
+## Command Documentation
+
+For a full list of commands and usage examples, see the documentation at:
+
+[https://bianchi-ed.github.io/sumo-orb/](https://bianchi-ed.github.io/sumo-orb/)
