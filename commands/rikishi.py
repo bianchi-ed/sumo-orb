@@ -12,7 +12,7 @@ def rikishi(ctx):
         response.raise_for_status()
         rikishis = response.json()
     except Exception as e:
-        ctx.reply(f"@{ctx.display_name} Error fetching rikishi data.")
+        ctx.reply(f"@{ctx.display_name} -> Error fetching rikishi data.")
         return
     if not isinstance(rikishis, list):
         if isinstance(rikishis, dict) and "records" in rikishis and isinstance(rikishis["records"], list):
@@ -26,7 +26,7 @@ def rikishi(ctx):
             found = rikishi
             break
     if not found:
-        ctx.reply(f"@{ctx.display_name} No rikishi found for '{name_query}'.")
+        ctx.reply(f"@{ctx.display_name} -> No rikishi found for '{name_query}'.")
         return
     info = (
         f"Name: {found['shikonaEn']} | Rank: {found['currentRank']} | "
