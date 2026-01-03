@@ -25,13 +25,27 @@ def versus(ctx):
             return
         id1 = rikishi1["id"]
         id2 = rikishi2["id"]
-        # Get versus data
         url = f"https://www.sumo-api.com/api/rikishi/{id1}/matches/{id2}"
         v = requests.get(url)
         v.raise_for_status()
         data = v.json()
         wins = sum(data.get("kimariteWins", {}).values())
         losses = sum(data.get("kimariteLosses", {}).values())
-        ctx.reply(f"@{ctx.display_name} -> {rikishi1['shikonaEn']} {wins} - {losses} {rikishi2['shikonaEn']}")
+        msg = f"@{ctx.display_name} -> {rikishi1['shikonaEn']} {wins} - {losses} {rikishi2['shikonaEn']}."
+        # Print the last bout between the two
+        matches = data.get("matches", [])
+        if matches:
+            last = matches[0]
+            basho = last.get("bashoId", "?")
+            if isinstance(basho, str) and len(basho) == 6 and basho.isdigit():
+                basho_fmt = f"{basho[:4]}-{basho[4:]}"
+            else:
+                basho_fmt = basho
+            day = last.get("day", "?")
+            kimarite = last.get("kimarite", "?")
+            winner = last.get("winnerEn", "?")
+            loser = last.get("eastShikona") if last.get("winnerId") == last.get("westId") else last.get("westShikona")
+            msg += f" Their last bout was at {basho_fmt} on day {day}. {winner} defeated {loser} by {kimarite}."
+        ctx.reply(msg)
     except Exception as e:
         ctx.reply("Error fetching versus data.")

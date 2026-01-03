@@ -26,7 +26,7 @@
       pointer-events: none;
     }
     .container {
-      max-width: 700px;
+      max-width: 860px;
       margin: 56px auto 0 auto;
       padding: 36px 30px 28px 30px;
       background: rgba(35,38,46,0.98);
@@ -169,9 +169,9 @@
           <svg viewBox="0 0 24 24" width="22" height="22" style="display:block;transform:rotate(90deg)" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
         </span>&commands</div>
         <div class="command-details" style="display:block;">
-          <div><span class="label">Description:</span> Lists all available commands.</div>
-          <div><span class="label">Example:</span> &commands</div>
-          <div><span class="label">Reply:</span> <span class="reply">@user → &highestrank, &record, &recordbydivision, &rikishi, &shanshos, &versus</span></div>
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Lists all available commands.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&commands</span></div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → &highestrank, &record, &recordbydivision, &rikishi, &shansho, &versus</span></div>
         </div>
       </div>
       <div class="command">
@@ -179,8 +179,8 @@
           <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
         </span>&highestrank</div>
         <div class="command-details">
-          <div><span class="label">Description:</span> Shows the highest rank ever achieved by a rikishi.</div>
-          <div><span class="label">Example:</span> &highestrank onosato</div>
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows the highest rank ever achieved by a rikishi.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&highestrank onosato</span></div>
           <div><span class="label">Reply:</span> <span class="reply">@user → Yokozuna 1 East</span></div>
         </div>
       </div>
@@ -189,8 +189,8 @@
           <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
         </span>&record</div>
         <div class="command-details">
-          <div><span class="label">Description:</span> Shows the overall record for a rikishi.</div>
-          <div><span class="label">Example:</span> &record onosato</div>
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows the overall record for a rikishi.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&record onosato</span></div>
           <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Wins: 170 | Losses: 54 | Matches: 224 | Basho: 17 | Yusho: 5</span></div>
         </div>
       </div>
@@ -199,8 +199,8 @@
           <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
         </span>&recordbydivision</div>
         <div class="command-details">
-          <div><span class="label">Description:</span> Shows a rikishi's record by division.</div>
-          <div><span class="label">Example:</span> &recordbydivision onosato</div>
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows a rikishi's record by division.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&recordbydivision onosato</span></div>
           <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Makuuchi: 136-44 | Makushita: 10-4 | Juryo: 24-6</span></div>
         </div>
       </div>
@@ -209,18 +209,18 @@
           <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
         </span>&rikishi</div>
         <div class="command-details">
-          <div><span class="label">Description:</span> Shows info about a rikishi.</div>
-          <div><span class="label">Example:</span> &rikishi onosato</div>
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows info about a rikishi.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&rikishi onosato</span></div>
           <div><span class="label">Reply:</span> <span class="reply">@user → Name: Onosato | Rank: Yokozuna 1 West | Heya: Nishonoseki | Birth: 2000-06-07 | Shusshin: Ishikawa-ken, Kahoku-gun, Tsubata-machi | Height: 192cm | Weight: 183kg | Debut: 202305</span></div>
         </div>
       </div>
       <div class="command">
         <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
           <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
-        </span>&shanshos</div>
+        </span>&shansho</div>
         <div class="command-details">
-          <div><span class="label">Description:</span> Shows the number of special prizes (sansho) a rikishi has won.</div>
-          <div><span class="label">Example:</span> &shanshos onosato</div>
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows the number of special prizes (sansho) a rikishi has won.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&shansho onosato</span></div>
           <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Gino-sho: 3 | Kanto-sho: 3 | Shukun-sho: 2</span></div>
         </div>
       </div>
@@ -229,9 +229,29 @@
           <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
         </span>&versus</div>
         <div class="command-details">
-          <div><span class="label">Description:</span> Shows the head-to-head record between two rikishis.</div>
-          <div><span class="label">Example:</span> &versus onosato hoshoryu</div>
-          <div><span class="label">Reply:</span> <span class="reply">@user → Onosato 3 - 8 Hoshoryu</span></div>
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows the head-to-head record and last bout between two rikishi.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&versus onosato oho</span></div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Onosato 6 - 3 Oho. Their last bout was at 2025-11 on day 12. Onosato defeated Oho by yorikiri.</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&kimaritehistory</div>
+        <div class="command-details">
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows the last recorded match where a specific kimarite (winning technique) was used, including winner, opponent, basho, day, and bout number.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&kimaritehistory uchimuso</span></div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Last recorded Uchimuso: Aonishiki defeated Kotozakura on 2025-11 day 15, bout 24.</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&bashoresults</div>
+        <div class="command-details">
+          <div style="margin-bottom:7px;"><span class="label">Description:</span> Shows the yusho (division winners) and special prize winners for a given basho.</div>
+          <div style="margin-bottom:7px;"><span class="label">Usage Example:</span> <span class="reply">&bashoresults 2025-11</span></div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Yusho: Aonishiki (Makuuchi), Fujiryoga (Juryo), ... | Shukun-sho: Aonishiki | Kanto-sho: Kirishima, Ichiyamamoto | Gino-sho: Aonishiki, Yoshinofuji</span></div>
         </div>
       </div>
     </div>
