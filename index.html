@@ -3,119 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <title>sumo-orb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0f0f0f;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: #181a20;
       color: #eaeaea;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
-    h1, h2 {
-      color: #ffcc00;
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 32px 24px;
+      background: #23262e;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
     }
     h1 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 10px;
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
+      color: #ffcc00;
+      font-weight: 700;
     }
-    hr {
-      border: none;
-      border-top: 1px solid #333;
-      margin: 30px 0;
+    .subtitle {
+      color: #bdbdbd;
+      font-size: 1.1em;
+      margin-bottom: 1.5em;
+    }
+    .repo-link {
+      display: inline-block;
+      margin-bottom: 2em;
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #00bfff;
+      transition: color 0.2s;
+    }
+    .repo-link:hover {
+      color: #0099cc;
+      border-bottom: 1px solid #0099cc;
+    }
+    .commands-section {
+      margin-top: 2em;
     }
     .command {
-      margin-bottom: 30px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #31343c;
+      padding-bottom: 12px;
     }
-    .command-name {
+    .command-header {
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #00bfff;
+      margin-bottom: 0.2em;
+      display: flex;
+      align-items: center;
+    }
+    .command-header span {
+      margin-right: 8px;
       font-size: 1.2em;
-      font-weight: bold;
-      color: #00d4ff;
+      transition: transform 0.2s;
+    }
+    .command-details {
+      display: none;
+      margin-left: 18px;
+      margin-top: 0.5em;
+      font-size: 0.98em;
+      color: #eaeaea;
     }
     .label {
       color: #ffcc00;
-      font-weight: bold;
-    }
-    .usage {
-      color: #00d4ff;
+      font-weight: 500;
+      margin-right: 4px;
     }
     .reply {
-      color: #9aff9a;
+      color: #00ff99;
+      font-family: monospace;
+      background: #23262e;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 2px;
+      border: 1px solid #31343c;
     }
     footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #777;
+      margin-top: 40px;
+      font-size: 0.95em;
+      color: #bdbdbd;
       text-align: center;
     }
   </style>
 </head>
 <body>
 
-<h1>sumo-orb</h1>
-<p><strong>sumo-orb</strong> is a simple twitch.tv chat bot for sumo stats.</p>
-
-<h2>Commands & Examples</h2>
-
-<div class="command">
-  <div class="command-name">&commands</div>
-  <div><span class="label">Description:</span> Lists all available commands.</div>
-  <div><span class="label">Example:</span> <span class="usage">&commands</span></div>
-  <div><span class="label">Reply:</span> <span class="reply">@user → &highestrank, &record, &recordbydivision, &rikishi, &shanshos, &versus</span></div>
-</div>
-<hr>
-
-<div class="command">
-  <div class="command-name">&highestrank</div>
-  <div><span class="label">Description:</span> Shows the highest rank ever achieved by a rikishi.</div>
-  <div><span class="label">Example:</span> <span class="usage">&highestrank onosato</span></div>
-  <div><span class="label">Reply:</span> <span class="reply">@user → Yokozuna 1 East</span></div>
-</div>
-<hr>
-
-<div class="command">
-  <div class="command-name">&record</div>
-  <div><span class="label">Description:</span> Shows the overall record for a rikishi.</div>
-  <div><span class="label">Example:</span> <span class="usage">&record onosato</span></div>
-  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Wins: 170 | Losses: 54 | Matches: 224 | Basho: 17 | Yusho: 5</span></div>
-</div>
-<hr>
-
-<div class="command">
-  <div class="command-name">&recordbydivision</div>
-  <div><span class="label">Description:</span> Shows a rikishi's record by division.</div>
-  <div><span class="label">Example:</span> <span class="usage">&recordbydivision onosato</span></div>
-  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Makuuchi: 136-44 | Makushita: 10-4 | Juryo: 24-6</span></div>
-</div>
-<hr>
-
-<div class="command">
-  <div class="command-name">&rikishi</div>
-  <div><span class="label">Description:</span> Shows info about a rikishi.</div>
-  <div><span class="label">Example:</span> <span class="usage">&rikishi onosato</span></div>
-  <div><span class="label">Reply:</span> <span class="reply">@user → Name: Onosato | Rank: Yokozuna 1 West | Heya: Nishonoseki | Birth: 2000-06-07 | Shusshin: Ishikawa-ken, Kahoku-gun, Tsubata-machi | Height: 192cm | Weight: 183kg | Debut: 202305</span></div>
-</div>
-<hr>
-
-<div class="command">
-  <div class="command-name">&shanshos</div>
-  <div><span class="label">Description:</span> Shows the number of special prizes (sansho) a rikishi has won.</div>
-  <div><span class="label">Example:</span> <span class="usage">&shanshos onosato</span></div>
-  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Gino-sho: 3 | Kanto-sho: 3 | Shukun-sho: 2</span></div>
-</div>
-<hr>
-
-<div class="command">
-  <div class="command-name">&versus</div>
-  <div><span class="label">Description:</span> Shows the head-to-head record between two rikishis.</div>
-  <div><span class="label">Example:</span> <span class="usage">&versus onosato hoshoryu</span></div>
-  <div><span class="label">Reply:</span> <span class="reply">@user → Onosato 3 - 8 Hoshoryu</span></div>
-</div>
-
-<footer>
-  © sumo-orb — Twitch Sumo Stats Bot
-</footer>
+  <div class="container">
+    <h1>sumo-orb</h1>
+    <div class="subtitle">A lightweight Twitch chat bot for sumo wrestling stats and records.</div>
+    <a class="repo-link" href="https://github.com/bianchi-ed/sumo-orb" target="_blank">View on GitHub</a>
+    <div class="commands-section">
+      <h2>Commands</h2>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&commands</div>
+        <div class="command-details">
+          <div><span class="label">Description:</span> Lists all available commands.</div>
+          <div><span class="label">Example:</span> &commands</div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → &highestrank, &record, &recordbydivision, &rikishi, &shanshos, &versus</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&highestrank</div>
+        <div class="command-details">
+          <div><span class="label">Description:</span> Shows the highest rank ever achieved by a rikishi.</div>
+          <div><span class="label">Example:</span> &highestrank onosato</div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Yokozuna 1 East</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&record</div>
+        <div class="command-details">
+          <div><span class="label">Description:</span> Shows the overall record for a rikishi.</div>
+          <div><span class="label">Example:</span> &record onosato</div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Wins: 170 | Losses: 54 | Matches: 224 | Basho: 17 | Yusho: 5</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&recordbydivision</div>
+        <div class="command-details">
+          <div><span class="label">Description:</span> Shows a rikishi's record by division.</div>
+          <div><span class="label">Example:</span> &recordbydivision onosato</div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Makuuchi: 136-44 | Makushita: 10-4 | Juryo: 24-6</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&rikishi</div>
+        <div class="command-details">
+          <div><span class="label">Description:</span> Shows info about a rikishi.</div>
+          <div><span class="label">Example:</span> &rikishi onosato</div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Name: Onosato | Rank: Yokozuna 1 West | Heya: Nishonoseki | Birth: 2000-06-07 | Shusshin: Ishikawa-ken, Kahoku-gun, Tsubata-machi | Height: 192cm | Weight: 183kg | Debut: 202305</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&shanshos</div>
+        <div class="command-details">
+          <div><span class="label">Description:</span> Shows the number of special prizes (sansho) a rikishi has won.</div>
+          <div><span class="label">Example:</span> &shanshos onosato</div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Onosato | Gino-sho: 3 | Kanto-sho: 3 | Shukun-sho: 2</span></div>
+        </div>
+      </div>
+      <div class="command">
+        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&versus</div>
+        <div class="command-details">
+          <div><span class="label">Description:</span> Shows the head-to-head record between two rikishis.</div>
+          <div><span class="label">Example:</span> &versus onosato hoshoryu</div>
+          <div><span class="label">Reply:</span> <span class="reply">@user → Onosato 3 - 8 Hoshoryu</span></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      © sumo-orb — Twitch Sumo Stats Bot
+    </footer>
+  </div>
+  <script>
+    function toggleDetails(header) {
+      var details = header.nextElementSibling;
+      var arrow = header.querySelector('span');
+      if (details.style.display === 'block') {
+        details.style.display = 'none';
+        arrow.textContent = '▶';
+        arrow.style.transform = 'none';
+      } else {
+        details.style.display = 'block';
+        arrow.textContent = '▼';
+        arrow.style.transform = 'rotate(90deg)';
+      }
+    }
+  </script>
 
 </body>
 </html>

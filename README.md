@@ -1,6 +1,6 @@
 # sumo-orb
 
-Sumo-orb is a simple twitch.tv chat bot for sumo stats.
+umo-orb is a simple twitch.tv chat bot for sumo stats.
 
 ## Command Documentation
 
