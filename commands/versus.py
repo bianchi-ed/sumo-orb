@@ -45,7 +45,7 @@ def versus(ctx):
             kimarite = last.get("kimarite", "?")
             winner = last.get("winnerEn", "?")
             loser = last.get("eastShikona") if last.get("winnerId") == last.get("westId") else last.get("westShikona")
-            msg += f" Their last bout was at {basho_fmt} on day {day}. {winner} defeated {loser} by {kimarite}."
+            msg += f" Their last bout was at {basho_fmt} on day {day}. {winner} won by {kimarite}."
         ctx.reply(msg)
     except Exception as e:
         ctx.reply("Error fetching versus data.")
