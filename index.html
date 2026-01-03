@@ -7,113 +7,177 @@
   <style>
     body {
       font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-      background: #181a20;
+      background: linear-gradient(135deg, #181a20 60%, #23262e 100%);
       color: #eaeaea;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      opacity: 0.08;
+      background: url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="48" stroke="%23e0cfa0" stroke-width="7" fill="%2323262e"/><circle cx="60" cy="60" r="32" stroke="%23c7a96b" stroke-width="2.5" fill="none"/></svg>');
+      background-size: 160px 160px;
+      background-repeat: repeat;
+      pointer-events: none;
     }
     .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 32px 24px;
-      background: #23262e;
-      border-radius: 12px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+      max-width: 700px;
+      margin: 56px auto 0 auto;
+      padding: 36px 30px 28px 30px;
+      background: rgba(35,38,46,0.98);
+      border-radius: 22px 22px 14px 14px;
+      box-shadow: 0 6px 36px rgba(0,0,0,0.28);
+      border-top: 8px solid #c7a96b;
+      border-bottom: 2px solid #3a2c1a;
+      position: relative;
+      z-index: 1;
     }
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 0.2em;
-      color: #ffcc00;
-      font-weight: 700;
+      font-size: 2.5em;
+      margin-bottom: 0.1em;
+      color: #c7a96b;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-shadow: 0 2px 12px #181a20;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     }
     .subtitle {
-      color: #bdbdbd;
-      font-size: 1.1em;
-      margin-bottom: 1.5em;
+      color: #e0cfa0;
+      font-size: 1.18em;
+      margin-bottom: 1.7em;
+      text-align: center;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.2px;
     }
     .repo-link {
-      display: inline-block;
-      margin-bottom: 2em;
-      color: #00bfff;
+      display: block;
+      margin: 0 auto 2.2em auto;
+      color: #c7a96b;
       text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px dotted #00bfff;
-      transition: color 0.2s;
+      font-weight: 600;
+      border-bottom: 1.5px dotted #c7a96b;
+      width: fit-content;
+      transition: color 0.2s, border-bottom 0.2s;
+      text-align: center;
+      font-size: 1.07em;
     }
     .repo-link:hover {
-      color: #0099cc;
-      border-bottom: 1px solid #0099cc;
+      color: #eaeaea;
+      border-bottom: 1.5px solid #eaeaea;
     }
     .commands-section {
-      margin-top: 2em;
+      margin-top: -0.5em;
+      position: relative;
+    }
+    .divider {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #c7a96b 60%, #e0cfa0 100%);
+      border-radius: 2px;
+      margin: 0.7em auto 2.2em auto;
     }
     .command {
       margin-bottom: 18px;
-      border-bottom: 1px solid #31343c;
+      border-bottom: 1px solid #3a2c1a;
       padding-bottom: 12px;
     }
     .command-header {
       cursor: pointer;
-      font-size: 1.1em;
+      font-size: 1.08em;
       font-weight: 600;
-      color: #00bfff;
+      color: #c7a96b;
       margin-bottom: 0.2em;
       display: flex;
       align-items: center;
+      letter-spacing: 0.5px;
     }
-    .command-header span {
-      margin-right: 8px;
-      font-size: 1.2em;
-      transition: transform 0.2s;
+    .command-header .arrow {
+      margin-right: 10px;
+      width: 1.4em;
+      height: 1.4em;
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform 0.25s cubic-bezier(.4,2,.3,1), fill 0.2s;
+      fill: #ffcc00;
+      background: none;
+    }
+    .command-header.expanded {
+      background: #181a20;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px #181a20;
     }
     .command-details {
       display: none;
       margin-left: 18px;
       margin-top: 0.5em;
-      font-size: 0.98em;
+      font-size: 0.97em;
       color: #eaeaea;
+      border-left: 2px solid #c7a96b;
+      padding-left: 12px;
     }
     .label {
-      color: #ffcc00;
+      color: #c7a96b;
       font-weight: 500;
       margin-right: 4px;
     }
     .reply {
       color: #00ff99;
       font-family: monospace;
-      background: #23262e;
+      background: #181a20;
       padding: 4px 8px;
       border-radius: 4px;
       display: inline-block;
       margin-top: 2px;
-      border: 1px solid #31343c;
+      border: 1px solid #3a2c1a;
     }
     footer {
       margin-top: 40px;
       font-size: 0.95em;
       color: #bdbdbd;
       text-align: center;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>sumo-orb</h1>
-    <div class="subtitle">A lightweight Twitch chat bot for sumo wrestling stats and records.</div>
-    <a class="repo-link" href="https://github.com/bianchi-ed/sumo-orb" target="_blank">View on GitHub</a>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 2px 0 2px;height:38px;">
+        <span style="font-size:1.25em;font-weight:700;color:#c7a96b;letter-spacing:1.2px;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">sumo-orb</span>
+        <a href="https://github.com/bianchi-ed/sumo-orb" target="_blank" style="display:inline-flex;align-items:center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.71.12 2.51.35 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85 0 1.33-.01 2.4-.01 2.73 0 .27.16.58.67.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z" fill="#c7a96b"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:18px;">
+        <div class="subtitle" style="line-height:1.7;text-align:center;max-width:520px;margin-top:18px;">
+          <span style="display:block;font-size:1.32em;font-weight:700;color:#ffe6a0;margin-bottom:0.22em;letter-spacing:0.5px;">Explore Sumo</span>
+          <span style="display:block;margin-bottom:0.2em;">Rankings, results, analytics, and history.</span>
+        </div>
+      </div>
     <div class="commands-section">
-      <h2>Commands</h2>
       <div class="command">
-        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&commands</div>
-        <div class="command-details">
+        <div class="command-header expanded" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block;transform:rotate(90deg)" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&commands</div>
+        <div class="command-details" style="display:block;">
           <div><span class="label">Description:</span> Lists all available commands.</div>
           <div><span class="label">Example:</span> &commands</div>
           <div><span class="label">Reply:</span> <span class="reply">@user → &highestrank, &record, &recordbydivision, &rikishi, &shanshos, &versus</span></div>
         </div>
       </div>
       <div class="command">
-        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&highestrank</div>
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&highestrank</div>
         <div class="command-details">
           <div><span class="label">Description:</span> Shows the highest rank ever achieved by a rikishi.</div>
           <div><span class="label">Example:</span> &highestrank onosato</div>
@@ -121,7 +185,9 @@
         </div>
       </div>
       <div class="command">
-        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&record</div>
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&record</div>
         <div class="command-details">
           <div><span class="label">Description:</span> Shows the overall record for a rikishi.</div>
           <div><span class="label">Example:</span> &record onosato</div>
@@ -129,7 +195,9 @@
         </div>
       </div>
       <div class="command">
-        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&recordbydivision</div>
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&recordbydivision</div>
         <div class="command-details">
           <div><span class="label">Description:</span> Shows a rikishi's record by division.</div>
           <div><span class="label">Example:</span> &recordbydivision onosato</div>
@@ -137,7 +205,9 @@
         </div>
       </div>
       <div class="command">
-        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&rikishi</div>
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&rikishi</div>
         <div class="command-details">
           <div><span class="label">Description:</span> Shows info about a rikishi.</div>
           <div><span class="label">Example:</span> &rikishi onosato</div>
@@ -145,7 +215,9 @@
         </div>
       </div>
       <div class="command">
-        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&shanshos</div>
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&shanshos</div>
         <div class="command-details">
           <div><span class="label">Description:</span> Shows the number of special prizes (sansho) a rikishi has won.</div>
           <div><span class="label">Example:</span> &shanshos onosato</div>
@@ -153,7 +225,9 @@
         </div>
       </div>
       <div class="command">
-        <div class="command-header" onclick="toggleDetails(this)"><span>▶</span>&versus</div>
+        <div class="command-header" onclick="toggleDetails(this)"><span class="arrow"> 
+          <svg viewBox="0 0 24 24" width="22" height="22" style="display:block" xmlns="http://www.w3.org/2000/svg"><polygon points="7,5 19,12 7,19" fill="#ffcc00"/></svg>
+        </span>&versus</div>
         <div class="command-details">
           <div><span class="label">Description:</span> Shows the head-to-head record between two rikishis.</div>
           <div><span class="label">Example:</span> &versus onosato hoshoryu</div>
@@ -161,22 +235,19 @@
         </div>
       </div>
     </div>
-    <footer>
-      © sumo-orb — Twitch Sumo Stats Bot
-    </footer>
   </div>
   <script>
     function toggleDetails(header) {
       var details = header.nextElementSibling;
-      var arrow = header.querySelector('span');
+      var arrow = header.querySelector('.arrow svg');
       if (details.style.display === 'block') {
         details.style.display = 'none';
-        arrow.textContent = '▶';
-        arrow.style.transform = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+        header.classList.remove('expanded');
       } else {
         details.style.display = 'block';
-        arrow.textContent = '▼';
         arrow.style.transform = 'rotate(90deg)';
+        header.classList.add('expanded');
       }
     }
   </script>
